@@ -1,0 +1,15 @@
+﻿using System.Text.Json.Serialization;
+
+namespace OpenAI.GPT3.ObjectModels.SharedModels
+{
+    public class ChoiceResponse : IOpenAiModels.ILogProbsResponse
+    {
+        [JsonPropertyName("text")] public string Text { get; set; }
+
+        [JsonPropertyName("index")] public int? Index { get; set; }
+
+        [JsonPropertyName("finish_reason")] public string FinishReason { get; set; }
+
+        [JsonPropertyName("logprobs")] public LogProbsResponse LogProbs { get; set; }
+    }
+}
